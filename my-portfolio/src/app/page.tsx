@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -42,10 +43,10 @@ export default function Portfolio() {
   // companies + details for interactive Experience section
   const companies = [
     {
-      id: 'wealthsimple',
-      name: 'Wealthsimple',
-      role: 'ML Platform Engineer',
-      period: 'February 2023 - Present',
+      id: 'First National Financial LP',
+      name: 'First National Financial LP',
+      role: 'Application Developer II',
+      period: 'June 2022 - Present',
       bullets: [
         'Initiated and led the development of a reliable and scalable ML pipeline, enabling efficient fine‑tuning and deployment of large language models (LLMs).',
         'Designed and deployed a productivity AI assistant used daily by ~90% of the company, enabling secure interactions with OpenAI, Google Gemini, and Meta Llama.',
@@ -53,17 +54,17 @@ export default function Portfolio() {
       ],
     },
     {
-      id: 'drw',
-      name: 'DRW Trading',
-      role: 'Software Engineer',
+      id: 'Communication Test Design Inc.',
+      name: 'Communication Test Design Inc.',
+      role: 'QA Technician',
       period: '2021 - 2022',
       bullets: [
-        'Built low-latency services and internal tools to support trading workflows.',
+        'Performed manual QA for Telus modem hardware and firmware: executed test cases, validated configurations, logged and tracked defects, and verified fixes across firmware releases.',
         'Collaborated with traders and engineers to improve reliability and observability.',
       ],
     },
     {
-      id: 'morgan',
+      id: 'Home Depot',
       name: 'Morgan Stanley',
       role: 'Intern / Engineer',
       period: '2020',
@@ -322,7 +323,7 @@ export default function Portfolio() {
                 }}
                 whileTap={{ scale: 0.98, y: -1 }}
                 transition={{ type: 'spring', stiffness: 360, damping: 18 }}
-                className="px-10 py-3 text-lg font-semibold bg-transparent text-teal-300 rounded-none border-2 border-teal-400 focus:outline-none"
+                className="px-10 py-3 text-lg font-semibold bg-transparent text-teal-300 rounded-md border-2 border-teal-400 focus:outline-none"
                 style={{ backdropFilter: 'blur(6px)' }}
                 aria-label="Say hi"
               >
