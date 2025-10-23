@@ -2,7 +2,6 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { Github, Linkedin, ArrowRight, Terminal } from 'lucide-react';
 
 /**
@@ -150,7 +149,7 @@ export default function HeroSectionParallax() {
           className="text-lg md:text-xl mb-3"
           style={{ color: 'rgba(189, 216, 233, 0.6)' }}
         >
-          Hi, I'm
+          Hi, I&apos;m
         </motion.p>
 
         {/* Name - HERO FOCAL POINT with Apple-smooth animation */}

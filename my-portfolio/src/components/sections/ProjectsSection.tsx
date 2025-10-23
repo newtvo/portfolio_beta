@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Sparkles, Zap, Brain, Globe } from 'lucide-react';
-import Image from 'next/image';
 
 export default function ProjectsSection() {
   const projects = [

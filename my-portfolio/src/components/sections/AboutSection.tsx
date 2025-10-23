@@ -4,7 +4,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Code2, Coffee, Rocket, Award, MapPin, Briefcase } from 'lucide-react';
+import { Code2, Coffee, Rocket, Award, Briefcase } from 'lucide-react';
 
 export default function AboutSection() {
   const stats = [
@@ -31,15 +31,6 @@ export default function AboutSection() {
       value: '∞', 
       label: 'Coffee Consumed',
       gradient: 'from-green-500 to-teal-500' 
-    },
-  ];
-
-  const highlights = [
-    {
-      icon: Award,
-      title: 'Current Role',
-      description: 'Application Developer II at First National Financial LP',
-      color: '#7BBDE8'
     },
   ];
 

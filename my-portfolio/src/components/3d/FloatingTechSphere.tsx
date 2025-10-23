@@ -24,7 +24,7 @@ const techStack: TechOrb[] = [
 
 function TechOrb({ tech }: { tech: TechOrb }) {
   const meshRef = useRef<THREE.Mesh>(null);
-  const textRef = useRef<any>(null);
+  const textRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (!meshRef.current || !textRef.current) return;

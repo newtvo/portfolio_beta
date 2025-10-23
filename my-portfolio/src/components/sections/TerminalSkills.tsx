@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function TerminalSkills() {
   const [cursorBlink, setCursorBlink] = useState(true);
@@ -207,8 +207,8 @@ export default function TerminalSkills() {
         >
           {/* Welcome Message */}
           <div className="mb-4" style={{ color: '#4E8EA2' }}>
-            <p>Welcome to Nhut Vo's Portfolio</p>
-            <p>Type 'help' to see available commands</p>
+            <p>Welcome to Nhut Vo&apos;s Portfolio</p>
+            <p>Type &apos;help&apos; to see available commands</p>
             <p className="mt-2">────────────────────────────────────────</p>
           </div>
 
