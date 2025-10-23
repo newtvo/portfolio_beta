@@ -92,7 +92,8 @@ export default function AboutSection() {
               <h3 
                 className="text-2xl font-bold mb-1"
                 style={{
-                  color: '#FFFFFF',
+                  color: '#001D39',
+                  textShadow: '0 0 20px rgba(123, 189, 232, 0.6), 0 2px 4px rgba(0, 0, 0, 0.2)',
                 }}
               >
                 Nhut Vo
@@ -100,7 +101,8 @@ export default function AboutSection() {
               <p 
                 className="text-sm font-medium" 
                 style={{ 
-                  color: '#BDD8E9',
+                  color: '#003A5C',
+                  textShadow: '0 0 10px rgba(123, 189, 232, 0.4)',
                 }}
               >
                 Full-Stack Developer
