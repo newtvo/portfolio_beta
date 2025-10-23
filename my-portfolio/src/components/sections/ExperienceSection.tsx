@@ -79,13 +79,12 @@ export default function ExperienceSection() {
 
   return (
     <section id="experience" className="max-w-5xl mx-auto py-24 px-6">
-      <h2 className="text-3xl font-semibold mb-8 text-teal-300">Experience</h2>
+      <h2 className="text-3xl font-semibold mb-8" style={{ color: '#7BBDE8' }}>Experience</h2>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {/* Where I've Worked - interactive list */}
-        <aside className="space-y-3">
-          <h3 className="text-lg font-medium text-teal-300">Where I've Worked</h3>
-          <ul className="text-sm text-slate-400 space-y-2">
+        {/* Company selector - Apple Glass UI 2025 */}
+        <aside className="space-y-2">
+          <ul className="text-sm space-y-2">
             {companies.map((c) => (
               <li key={c.id}>
                 <button
@@ -94,20 +93,72 @@ export default function ExperienceSection() {
                   onMouseLeave={handleHoverLeave}
                   onFocus={() => setSelected(c.id)}
                   onClick={() => setSelected(c.id)}
-                  className={
-                    'w-full text-left px-2 py-1 transition-colors ' +
-                    (selected === c.id
-                      ? 'text-teal-300 font-medium'
-                      : 'text-slate-400 hover:text-teal-300')
-                  }
+                  className="group w-full text-left px-5 py-3.5 transition-all duration-300 ease-out rounded-xl relative overflow-hidden backdrop-blur-2xl"
+                  style={{
+                    color: selected === c.id ? '#ffffff' : 'rgba(189, 216, 233, 0.75)',
+                    fontWeight: selected === c.id ? 600 : 500,
+                    backgroundColor: selected === c.id 
+                      ? 'rgba(123, 189, 232, 0.06)' 
+                      : 'transparent',
+                    border: selected === c.id 
+                      ? '1px solid rgba(123, 189, 232, 0.2)' 
+                      : '1px solid transparent',
+                    boxShadow: selected === c.id 
+                      ? '0 4px 16px -4px rgba(123, 189, 232, 0.15)' 
+                      : 'none',
+                    transform: selected === c.id ? 'translateX(4px)' : 'translateX(0)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    backdropFilter: 'blur(12px)',
+                  }}
                   aria-pressed={selected === c.id}
                 >
-                  {c.name}
+                  {/* Gradient overlay for selected state */}
+                  {selected === c.id && (
+                    <div 
+                      className="absolute inset-0 opacity-30"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(123, 189, 232, 0.08) 0%, rgba(78, 142, 162, 0.04) 100%)',
+                        pointerEvents: 'none'
+                      }}
+                    />
+                  )}
+                  
+                  {/* Shimmer effect on hover */}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%)',
+                      transform: 'translateX(-100%)',
+                      animation: selected === c.id ? 'none' : 'shimmer 2s infinite',
+                      pointerEvents: 'none'
+                    }}
+                  />
+                  
+                  {/* Active indicator bar */}
+                  {selected === c.id && (
+                    <div 
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full"
+                      style={{
+                        background: 'linear-gradient(180deg, #7BBDE8 0%, #4E8EA2 100%)',
+                        boxShadow: '0 0 12px rgba(123, 189, 232, 0.6), 0 0 24px rgba(123, 189, 232, 0.3)'
+                      }}
+                    />
+                  )}
+                  
+                  <span className="relative z-10">{c.name}</span>
                 </button>
               </li>
             ))}
           </ul>
         </aside>
+        
+        {/* Add shimmer animation */}
+        <style jsx>{`
+          @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+          }
+        `}</style>
 
         {/* Selected role details */}
         <div className="md:col-span-2 space-y-6">
@@ -115,34 +166,38 @@ export default function ExperienceSection() {
             c.id === selected ? (
               <div
                 key={c.id}
-                className="p-6 rounded-2xl bg-slate-800/30 border border-slate-600/50 backdrop-blur-md shadow-2xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/5 before:to-transparent before:pointer-events-none transform-gpu perspective-1000 hover:scale-[1.02] transition-all duration-300 ease-out"
+                className="p-6 rounded-2xl bg-neutral-900/30 backdrop-blur-md shadow-2xl relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/5 before:to-transparent before:pointer-events-none transform-gpu perspective-1000 hover:scale-[1.02] transition-all duration-300 ease-out"
                 style={{
                   transform: 'rotateX(2deg) rotateY(-1deg) translateZ(0)',
                   boxShadow: '0 25px 50px rgba(0, 0, 0, 0.4), 0 15px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                  background: 'linear-gradient(145deg, rgba(51, 65, 85, 0.35), rgba(30, 41, 59, 0.25))'
+                  background: 'linear-gradient(145deg, rgba(51, 65, 85, 0.35), rgba(30, 41, 59, 0.25))',
+                  borderColor: 'rgba(78, 142, 162, 0.5)',
+                  borderWidth: '1px',
+                  borderStyle: 'solid'
                 }}
               >
                 <div className="flex items-start justify-between relative z-10">
                   <div>
                     <p className="text-xl font-semibold">
-                      <span className="text-slate-400">{c.role}</span>
+                      <span style={{ color: '#BDD8E9' }}>{c.role}</span>
                       <a
                         href={c.url || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium text-teal-300 ml-3 hover:underline"
+                        className="text-sm font-medium ml-3 hover:underline"
+                        style={{ color: '#7BBDE8' }}
                         aria-label={`${c.name} website`}
                       >
                         @ {c.name}
                       </a>
                     </p>
-                    <p className="mt-1 text-sm text-slate-400">{c.period}</p>
+                    <p className="mt-1 text-sm" style={{ color: 'rgba(189, 216, 233, 0.7)' }}>{c.period}</p>
                   </div>
                 </div>
 
-                <ul className="mt-4 list-disc list-inside space-y-3 text-slate-300 marker:text-teal-300 relative z-10">
+                <ul className="mt-4 list-disc list-inside space-y-3 relative z-10" style={{ color: 'rgba(189, 216, 233, 0.9)' }}>
                   {c.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
+                    <li key={i} className="marker:text-[#4E8EA2]">{b}</li>
                   ))}
                 </ul>
               </div>

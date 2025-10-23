@@ -116,7 +116,51 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #001D39; /* Match ocean theme */
+    margin: 0;
+    padding: 0;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    background: #001D39; /* Match ocean theme */
+    color: #7BBDE8; /* Ocean text color */
+    overscroll-behavior: none; /* Prevent bounce on iOS */
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Smooth scrolling enhancements for parallax */
+@layer utilities {
+  /* Remove default scroll-smooth for better parallax control */
+  .scroll-auto {
+    scroll-behavior: auto;
+  }
+  
+  /* Hardware acceleration for smooth animations */
+  .will-change-transform {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Optimized rendering */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Smooth section transitions */
+  .section-wrapper {
+    position: relative;
+    isolation: isolate;
   }
 }

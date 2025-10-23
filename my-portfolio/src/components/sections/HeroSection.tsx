@@ -34,9 +34,12 @@ function TypingText({ text, speed = 35 }: { text: string; speed?: number }) {
     >
       {/* Gradient glow background effect */}
       <motion.div
-        className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-teal-500/20 rounded-2xl blur-xl"
+        className="absolute -inset-2 rounded-2xl blur-xl"
+        style={{
+          background: 'linear-gradient(to right, rgba(78, 142, 162, 0.3), rgba(73, 118, 159, 0.3), rgba(78, 142, 162, 0.3))'
+        }}
         animate={{
-          opacity: [0.3, 0.6, 0.3],
+          opacity: [0.4, 0.7, 0.4],
         }}
         transition={{
           duration: 3,
@@ -46,21 +49,32 @@ function TypingText({ text, speed = 35 }: { text: string; speed?: number }) {
       />
       
       {/* Text container with glass morphism */}
-      <div className="relative backdrop-blur-sm bg-slate-800/30 border border-slate-700/50 rounded-2xl px-8 py-6 shadow-2xl">
+      <div className="relative backdrop-blur-sm bg-neutral-900/50 rounded-2xl px-8 py-6 shadow-2xl" style={{ borderColor: '#4E8EA2', borderWidth: '1px', borderStyle: 'solid' }}>
         <p className="text-xl md:text-2xl font-medium leading-relaxed">
           {/* Split text into parts for gradient effects */}
           {display.split('|').map((part, index) => (
             <span key={index}>
               {index === 0 ? (
                 // First part - standard gradient
-                <span className="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 bg-clip-text text-transparent">
+                <span style={{ 
+                  background: 'linear-gradient(to right, #BDD8E9, #7BBDE8, #BDD8E9)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}>
                   {part}
                 </span>
               ) : (
                 <>
-                  <span className="text-slate-500 mx-2">|</span>
-                  {/* Second part - highlight with teal gradient */}
-                  <span className="bg-gradient-to-r from-teal-300 via-cyan-300 to-teal-300 bg-clip-text text-transparent font-semibold">
+                  <span style={{ color: '#4E8EA2' }} className="mx-2">|</span>
+                  {/* Second part - highlight with ocean gradient */}
+                  <span style={{ 
+                    background: 'linear-gradient(to right, #7BBDE8, #6EA2B3, #7BBDE8)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    fontWeight: 600
+                  }}>
                     {part}
                   </span>
                 </>
@@ -73,8 +87,8 @@ function TypingText({ text, speed = 35 }: { text: string; speed?: number }) {
             aria-hidden="true"
             className="inline-block ml-1 w-[3px] h-6 rounded-full align-middle"
             style={{
-              background: 'linear-gradient(180deg, #2dd4bf 0%, #22d3ee 100%)',
-              boxShadow: '0 0 10px rgba(45, 212, 191, 0.5)'
+              background: 'linear-gradient(180deg, #4E8EA2 0%, #6EA2B3 100%)',
+              boxShadow: '0 0 15px rgba(78, 142, 162, 0.6)'
             }}
             animate={{
               opacity: isComplete ? [1, 0, 1] : 1,
@@ -88,8 +102,8 @@ function TypingText({ text, speed = 35 }: { text: string; speed?: number }) {
         </p>
         
         {/* Subtle decorative corner accents */}
-        <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-teal-400/40 rounded-tl-lg" />
-        <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-cyan-400/40 rounded-br-lg" />
+        <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 rounded-tl-lg" style={{ borderColor: '#4E8EA2', opacity: 0.6 }} />
+        <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 rounded-br-lg" style={{ borderColor: '#6EA2B3', opacity: 0.6 }} />
       </div>
     </motion.div>
   );
@@ -99,7 +113,8 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-center h-screen text-center p-8">
       <motion.h1
-        className="text-5xl font-bold mb-4 text-teal-300"
+        className="text-5xl font-bold mb-4"
+        style={{ color: '#7BBDE8' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -111,17 +126,19 @@ export default function HeroSection() {
         <a href="https://github.com/newtvo" target="_blank" rel="noopener noreferrer">
           <Button
             variant="outline"
-            className="flex items-center gap-2 border border-slate-600 bg-slate-800/30 text-slate-300 px-4 py-2 rounded-md hover:bg-slate-800/40 focus:outline-none"
+            className="flex items-center gap-2 bg-neutral-900/30 px-4 py-2 rounded-md hover:bg-neutral-900/50 focus:outline-none"
+            style={{ borderColor: '#4E8EA2', color: '#BDD8E9' }}
           >
-            <Github size={18} className="text-slate-300" /> GitHub
+            <Github size={18} style={{ color: '#BDD8E9' }} /> GitHub
           </Button>
         </a>
         <a href="https://www.linkedin.com/in/vo-nhut/" target="_blank" rel="noopener noreferrer">
           <Button
             variant="outline"
-            className="flex items-center gap-2 border border-slate-600 bg-slate-800/30 text-slate-300 px-4 py-2 rounded-md hover:bg-slate-800/40 focus:outline-none"
+            className="flex items-center gap-2 bg-neutral-900/30 px-4 py-2 rounded-md hover:bg-neutral-900/50 focus:outline-none"
+            style={{ borderColor: '#4E8EA2', color: '#BDD8E9' }}
           >
-            <Linkedin size={18} className="text-slate-300" /> LinkedIn
+            <Linkedin size={18} style={{ color: '#BDD8E9' }} /> LinkedIn
           </Button>
         </a>
       </div>

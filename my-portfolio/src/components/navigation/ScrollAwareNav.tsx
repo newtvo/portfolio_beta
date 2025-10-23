@@ -35,9 +35,10 @@ export default function ScrollAwareNav() {
 
   const navItems = [
     { label: 'About', href: '#about', number: '01' },
-    { label: 'Experience', href: '#experience', number: '02' },
-    { label: 'Projects', href: '#projects', number: '03' },
-    { label: 'Contact', href: '#contact', number: '04' },
+    { label: 'Skills', href: '#skills', number: '02' },
+    { label: 'Experience', href: '#experience', number: '03' },
+    { label: 'Projects', href: '#projects', number: '04' },
+    { label: 'Contact', href: '#contact', number: '05' },
   ];
 
   return (
@@ -50,9 +51,15 @@ export default function ScrollAwareNav() {
       }}
       className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-slate-900/90 border-b border-slate-700/30 shadow-lg' 
-          : 'bg-slate-900/20'
+          ? 'bg-neutral-900/90 shadow-lg' 
+          : 'bg-neutral-900/20'
       }`}
+      {...(isScrolled && {
+        style: {
+          ...{ opacity: navOpacity, backdropFilter: `blur(${navBlur}px)` },
+          borderBottom: '1px solid rgba(78, 142, 162, 0.3)'
+        }
+      })}
     >
       <div className="w-full px-6">
         <div className="flex items-center justify-between h-16">
@@ -66,8 +73,8 @@ export default function ScrollAwareNav() {
             className="text-xl font-bold"
             style={{ textShadow: '0 0 1px rgba(0, 0, 0, 0.5)' }}
           >
-            <span className="text-teal-300">N</span>
-            <span className="text-slate-200">V</span>
+            <span style={{ color: '#4E8EA2' }}>N</span>
+            <span style={{ color: '#7BBDE8' }}>V</span>
           </motion.div>
 
           {/* Nav Items */}
@@ -81,16 +88,22 @@ export default function ScrollAwareNav() {
               >
                 <a
                   href={item.href}
-                  className="group relative flex items-center gap-2 text-slate-300 hover:text-teal-300 transition-colors duration-300"
-                  style={{ textShadow: '0 0 1px rgba(0, 0, 0, 0.5)' }}
+                  className="group relative flex items-center gap-2 transition-colors duration-300"
+                  style={{ 
+                    textShadow: '0 0 1px rgba(0, 0, 0, 0.5)',
+                    color: 'rgba(189, 216, 233, 0.8)'
+                  }}
                 >
-                  <span className="font-mono text-xs text-teal-400 font-semibold group-hover:opacity-100">
+                  <span className="font-mono text-xs font-semibold group-hover:opacity-100" style={{ color: '#4E8EA2' }}>
                     {item.number}.
                   </span>
                   <span className="text-sm font-semibold">{item.label}</span>
                   
                   {/* Animated underline */}
-                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300" />
+                  <div 
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" 
+                    style={{ backgroundColor: '#4E8EA2' }}
+                  />
                 </a>
               </motion.li>
             ))}
@@ -98,9 +111,10 @@ export default function ScrollAwareNav() {
 
           {/* Scroll progress indicator */}
           <motion.div
-            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400"
+            className="absolute bottom-0 left-0 h-0.5"
             style={{
-              width: useTransform(scrollY, [0, scrollHeight], ['0%', '100%'])
+              width: useTransform(scrollY, [0, scrollHeight], ['0%', '100%']),
+              background: 'linear-gradient(to right, #4E8EA2, #6EA2B3)'
             }}
           />
         </div>
