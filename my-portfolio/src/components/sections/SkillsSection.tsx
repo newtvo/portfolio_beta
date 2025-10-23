@@ -35,172 +35,32 @@ export default function SkillsSection() {
 
   const skills: Skill[] = [
     // Languages
-    { 
-      name: 'C#', 
-      category: ['all', 'languages'], 
-      icon: <Code2 size={24} />, 
-      level: 95, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'TypeScript', 
-      category: ['all', 'languages'], 
-      icon: <Code2 size={24} />, 
-      level: 90, 
-      color: '#4E8EA2',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'Python', 
-      category: ['all', 'languages'], 
-      icon: <Code2 size={24} />, 
-      level: 85, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'JavaScript', 
-      category: ['all', 'languages'], 
-      icon: <Code2 size={24} />, 
-      level: 88, 
-      color: '#4E8EA2',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'SQL', 
-      category: ['all', 'languages'], 
-      icon: <Database size={24} />, 
-      level: 90, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
+    { name: 'C#', category: ['all', 'languages'], icon: <Code2 size={20} />, level: 95, color: '#7BBDE8', experience: 'Production Ready' },
+    { name: 'TypeScript', category: ['all', 'languages'], icon: <Code2 size={20} />, level: 90, color: '#4E8EA2', experience: 'Production Ready' },
+    { name: 'Python', category: ['all', 'languages'], icon: <Code2 size={20} />, level: 85, color: '#7BBDE8', experience: 'Production Ready' },
+    { name: 'JavaScript', category: ['all', 'languages'], icon: <Code2 size={20} />, level: 88, color: '#4E8EA2', experience: 'Production Ready' },
+    { name: 'SQL', category: ['all', 'languages'], icon: <Database size={20} />, level: 90, color: '#7BBDE8', experience: 'Production Ready' },
 
     // Frameworks
-    { 
-      name: 'ASP.NET Core', 
-      category: ['all', 'frameworks'], 
-      icon: <Layers size={24} />, 
-      level: 93, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'React', 
-      category: ['all', 'frameworks'], 
-      icon: <Layers size={24} />, 
-      level: 87, 
-      color: '#4E8EA2',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'Next.js', 
-      category: ['all', 'frameworks'], 
-      icon: <Layers size={24} />, 
-      level: 85, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'Entity Framework', 
-      category: ['all', 'frameworks'], 
-      icon: <Database size={24} />, 
-      level: 90, 
-      color: '#4E8EA2',
-      experience: 'Production Ready'
-    },
-    { 
-      name: '.NET Framework', 
-      category: ['all', 'frameworks'], 
-      icon: <Layers size={24} />, 
-      level: 88, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
+    { name: 'ASP.NET Core', category: ['all', 'frameworks'], icon: <Layers size={20} />, level: 93, color: '#7BBDE8', experience: 'Production Ready' },
+    { name: 'React', category: ['all', 'frameworks'], icon: <Layers size={20} />, level: 87, color: '#4E8EA2', experience: 'Production Ready' },
+    { name: 'Next.js', category: ['all', 'frameworks'], icon: <Layers size={20} />, level: 85, color: '#7BBDE8', experience: 'Production Ready' },
+    { name: 'Entity Framework', category: ['all', 'frameworks'], icon: <Database size={20} />, level: 90, color: '#4E8EA2', experience: 'Production Ready' },
+    { name: '.NET Framework', category: ['all', 'frameworks'], icon: <Layers size={20} />, level: 88, color: '#7BBDE8', experience: 'Production Ready' },
 
     // Cloud & DevOps
-    { 
-      name: 'Azure', 
-      category: ['all', 'cloud'], 
-      icon: <Cloud size={24} />, 
-      level: 90, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'Azure Functions', 
-      category: ['all', 'cloud'], 
-      icon: <Zap size={24} />, 
-      level: 85, 
-      color: '#4E8EA2',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'Azure DevOps', 
-      category: ['all', 'cloud'], 
-      icon: <GitBranch size={24} />, 
-      level: 88, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
-    { 
-      name: 'Azure AI', 
-      category: ['all', 'cloud'], 
-      icon: <Sparkles size={24} />, 
-      level: 80, 
-      color: '#4E8EA2',
-      experience: 'Actively Using'
-    },
-    { 
-      name: 'Azure Service Bus', 
-      category: ['all', 'cloud'], 
-      icon: <Server size={24} />, 
-      level: 82, 
-      color: '#7BBDE8',
-      experience: 'Production Ready'
-    },
+    { name: 'Azure', category: ['all', 'cloud'], icon: <Cloud size={20} />, level: 90, color: '#7BBDE8', experience: 'Production Ready' },
+    { name: 'Azure Functions', category: ['all', 'cloud'], icon: <Zap size={20} />, level: 85, color: '#4E8EA2', experience: 'Production Ready' },
+    { name: 'Azure DevOps', category: ['all', 'cloud'], icon: <GitBranch size={20} />, level: 88, color: '#7BBDE8', experience: 'Production Ready' },
+    { name: 'Azure AI', category: ['all', 'cloud'], icon: <Sparkles size={20} />, level: 80, color: '#4E8EA2', experience: 'Actively Using' },
+    { name: 'Azure Service Bus', category: ['all', 'cloud'], icon: <Server size={20} />, level: 82, color: '#7BBDE8', experience: 'Production Ready' },
 
     // Tools
-    { 
-      name: 'Git', 
-      category: ['all', 'tools'], 
-      icon: <GitBranch size={24} />, 
-      level: 92, 
-      color: '#7BBDE8',
-      experience: 'Daily Use'
-    },
-    { 
-      name: 'Visual Studio', 
-      category: ['all', 'tools'], 
-      icon: <Wrench size={24} />, 
-      level: 95, 
-      color: '#4E8EA2',
-      experience: 'Daily Use'
-    },
-    { 
-      name: 'VS Code', 
-      category: ['all', 'tools'], 
-      icon: <Wrench size={24} />, 
-      level: 93, 
-      color: '#7BBDE8',
-      experience: 'Daily Use'
-    },
-    { 
-      name: 'Docker', 
-      category: ['all', 'tools'], 
-      icon: <Box size={24} />, 
-      level: 75, 
-      color: '#4E8EA2',
-      experience: 'Actively Learning'
-    },
-    { 
-      name: 'Postman', 
-      category: ['all', 'tools'], 
-      icon: <Globe size={24} />, 
-      level: 88, 
-      color: '#7BBDE8',
-      experience: 'Daily Use'
-    },
+    { name: 'Git', category: ['all', 'tools'], icon: <GitBranch size={20} />, level: 92, color: '#7BBDE8', experience: 'Daily Use' },
+    { name: 'Visual Studio', category: ['all', 'tools'], icon: <Wrench size={20} />, level: 95, color: '#4E8EA2', experience: 'Daily Use' },
+    { name: 'VS Code', category: ['all', 'tools'], icon: <Wrench size={20} />, level: 93, color: '#7BBDE8', experience: 'Daily Use' },
+    { name: 'Docker', category: ['all', 'tools'], icon: <Box size={20} />, level: 75, color: '#4E8EA2', experience: 'Actively Learning' },
+    { name: 'Postman', category: ['all', 'tools'], icon: <Globe size={20} />, level: 88, color: '#7BBDE8', experience: 'Daily Use' },
   ];
 
   const categories = [
@@ -328,103 +188,93 @@ export default function SkillsSection() {
           ))}
         </motion.div>
 
-        {/* Skills Grid */}
+        {/* Skills Tag Cloud - Flowing Pills */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto"
         >
           <AnimatePresence mode="popLayout">
             {filteredSkills.map((skill, index) => (
               <motion.div
                 key={skill.name}
                 layout
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
+                exit={{ opacity: 0, scale: 0 }}
                 transition={{
                   duration: 0.3,
-                  delay: index * 0.05,
+                  delay: index * 0.02,
                   layout: { duration: 0.3 },
                 }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ scale: 1.1, y: -3 }}
+                whileTap={{ scale: 0.95 }}
                 onHoverStart={() => setHoveredSkill(skill.name)}
                 onHoverEnd={() => setHoveredSkill(null)}
-                className="relative p-6 rounded-2xl backdrop-blur-xl overflow-hidden group cursor-pointer"
-                style={{
-                  background: 'rgba(0, 29, 57, 0.3)',
-                  border: '1px solid rgba(123, 189, 232, 0.2)',
-                }}
+                className="relative group cursor-pointer"
               >
-                {/* Gradient Overlay on Hover */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredSkill === skill.name ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 pointer-events-none"
+                {/* Skill Pill */}
+                <div
+                  className="flex items-center gap-2 px-5 py-3 rounded-full backdrop-blur-xl transition-all duration-300"
                   style={{
-                    background: `linear-gradient(135deg, ${skill.color}15 0%, transparent 100%)`,
+                    background: hoveredSkill === skill.name 
+                      ? `${skill.color}25` 
+                      : 'rgba(0, 29, 57, 0.3)',
+                    border: `1px solid ${hoveredSkill === skill.name ? `${skill.color}60` : 'rgba(123, 189, 232, 0.2)'}`,
+                    boxShadow: hoveredSkill === skill.name 
+                      ? `0 0 20px ${skill.color}30, 0 4px 15px rgba(0, 0, 0, 0.2)` 
+                      : 'none',
                   }}
-                />
-
-                {/* Content */}
-                <div className="relative z-10">
+                >
                   {/* Icon */}
                   <motion.div
                     animate={{
                       rotate: hoveredSkill === skill.name ? 360 : 0,
-                      scale: hoveredSkill === skill.name ? 1.1 : 1,
                     }}
-                    transition={{ duration: 0.6 }}
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4"
-                    style={{
-                      background: `${skill.color}20`,
-                      border: `1px solid ${skill.color}40`,
-                      color: skill.color,
-                    }}
+                    transition={{ duration: 0.5 }}
+                    style={{ color: hoveredSkill === skill.name ? skill.color : '#7BBDE8' }}
                   >
                     {skill.icon}
                   </motion.div>
 
                   {/* Skill Name */}
-                  <h3 className="text-lg font-bold mb-3" style={{ color: '#BDD8E9' }}>
-                    {skill.name}
-                  </h3>
-
-                  {/* Experience Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
-                    style={{
-                      background: `${skill.color}15`,
-                      border: `1px solid ${skill.color}30`,
-                      color: skill.color,
+                  <span
+                    className="font-semibold text-sm whitespace-nowrap"
+                    style={{ 
+                      color: hoveredSkill === skill.name ? skill.color : '#BDD8E9' 
                     }}
                   >
-                    <motion.div
-                      animate={{
-                        scale: hoveredSkill === skill.name ? [1, 1.2, 1] : 1,
-                      }}
-                      transition={{ duration: 0.6, repeat: hoveredSkill === skill.name ? Infinity : 0 }}
-                      className="w-1.5 h-1.5 rounded-full"
-                      style={{ background: skill.color }}
-                    />
-                    {skill.experience}
-                  </motion.div>
-                </div>
+                    {skill.name}
+                  </span>
 
-                {/* Animated Border Glow */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredSkill === skill.name ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 rounded-2xl pointer-events-none"
-                  style={{
-                    boxShadow: `0 0 30px ${skill.color}50, inset 0 0 30px ${skill.color}20`,
-                  }}
-                />
+                  {/* Status Badge (shows on hover) */}
+                  <AnimatePresence>
+                    {hoveredSkill === skill.name && (
+                      <motion.div
+                        initial={{ opacity: 0, width: 0 }}
+                        animate={{ opacity: 1, width: 'auto' }}
+                        exit={{ opacity: 0, width: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex items-center gap-1.5 ml-1 pl-2 border-l"
+                        style={{ borderColor: `${skill.color}40` }}
+                      >
+                        <motion.div
+                          animate={{
+                            scale: [1, 1.3, 1],
+                          }}
+                          transition={{ duration: 1, repeat: Infinity }}
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ background: skill.color }}
+                        />
+                        <span 
+                          className="text-xs font-medium whitespace-nowrap"
+                          style={{ color: skill.color }}
+                        >
+                          {skill.experience}
+                        </span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>

@@ -2,21 +2,21 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Sparkles, Zap, Brain, Globe } from 'lucide-react';
+import { ExternalLink, Github, Sparkles, Cat, Shield, Zap, Home } from 'lucide-react';
 
 export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: 'AI Document Processor',
-      description: 'OCR-powered tool for extracting and processing insurance documents with 80% accuracy.',
-      tags: ['C#', 'Azure', 'AI/ML', 'OCR'],
-      icon: Brain,
+      title: 'Automated Underwriting Engine',
+      description: 'AI-powered loan decision engine with real-time income/debt analysis, credit evaluation, and automated approve/deny decisions with compliance checks.',
+      tags: ['C#', '.NET', 'Azure', 'Rules Engine', 'SQL'],
+      icon: Zap,
       gradient: 'from-blue-500 to-cyan-500',
       size: 'large', // spans 2 columns
-      github: 'https://github.com/newtvo',
+      github: 'https://github.com/newtvo/underwriting-engine',
       demo: '#',
-      image: '/projects/ai-doc.jpg', // Add your screenshot
+      image: '/projects/underwriting.jpg',
     },
     {
       id: 2,
@@ -32,26 +32,38 @@ export default function ProjectsSection() {
     },
     {
       id: 3,
-      title: 'Azure DevOps Pipeline',
-      description: 'Automated CI/CD pipeline reducing deployment time by 30%.',
-      tags: ['Azure', 'DevOps', 'CI/CD'],
-      icon: Zap,
-      gradient: 'from-orange-500 to-red-500',
+      title: 'Property Comparison Platform',
+      description: 'HouseSigma-style real estate comparison tool with side-by-side property analysis, price trends, neighborhood scores, and mortgage integration.',
+      tags: ['Next.js', 'TypeScript', 'Real Estate API', 'Charts'],
+      icon: Home,
+      gradient: 'from-indigo-500 to-purple-500',
       size: 'medium',
-      github: '#',
+      github: 'https://github.com/newtvo/property-comparison',
       demo: '#',
-      image: '/projects/pipeline.jpg',
+      image: '/projects/property-compare.jpg',
     },
     {
       id: 4,
-      title: 'Web Application Suite',
-      description: 'Scalable ASP.NET solutions serving 10k+ daily users.',
-      tags: ['ASP.NET', 'C#', 'SQL Server'],
-      icon: Globe,
-      gradient: 'from-green-500 to-teal-500',
+      title: 'Mortgage Fraud Detection System',
+      description: 'ML-powered fraud detection analyzing loan applications, documents, and patterns. Identifies suspicious income claims and document anomalies.',
+      tags: ['Python', 'Azure AI', 'ML', 'OCR', 'Anomaly Detection'],
+      icon: Shield,
+      gradient: 'from-red-500 to-rose-500',
       size: 'small',
-      github: '#',
+      github: 'https://github.com/newtvo/fraud-detection',
       demo: '#',
+    },
+    {
+      id: 5,
+      title: 'Cat Breeds Showcase',
+      description: 'Interactive web app showcasing 60+ cat breeds with beautiful images, detailed info, and search functionality using The Cat API.',
+      tags: ['Next.js', 'TypeScript', 'REST API', 'Tailwind'],
+      icon: Cat,
+      gradient: 'from-orange-500 to-amber-500',
+      size: 'medium',
+      github: 'https://github.com/newtvo/cat-breeds-showcase',
+      demo: '#',
+      image: '/projects/cat-breeds.jpg',
     },
   ];
 
