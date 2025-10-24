@@ -90,7 +90,7 @@ export default function AboutSection() {
               className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             >
               <h3 
-                className="text-2xl font-bold mb-1"
+                className="text-3xl font-bold mb-2"
                 style={{
                   color: '#001D39',
                   textShadow: '0 0 20px rgba(123, 189, 232, 0.6), 0 2px 4px rgba(0, 0, 0, 0.2)',
@@ -99,7 +99,7 @@ export default function AboutSection() {
                 Nhut Vo
               </h3>
               <p 
-                className="text-sm font-medium" 
+                className="text-base font-medium" 
                 style={{ 
                   color: '#003A5C',
                   textShadow: '0 0 10px rgba(123, 189, 232, 0.4)',
@@ -117,6 +117,55 @@ export default function AboutSection() {
               background: 'linear-gradient(135deg, #4E8EA2, #7BBDE8)',
             }}
           />
+        </motion.div>
+
+        {/* Bio Card - Right next to photo, spans 2 columns and 2 rows */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="md:col-span-2 md:row-span-2 p-6 rounded-2xl backdrop-blur-xl"
+          style={{
+            background: 'rgba(0, 29, 57, 0.3)',
+            border: '1px solid rgba(123, 189, 232, 0.2)',
+          }}
+        >
+          <h3 className="text-2xl font-bold mb-4" style={{ color: '#7BBDE8' }}>
+            My Story
+          </h3>
+          
+          {/* Current Role Badge */}
+          <div className="flex items-start gap-3 mb-4 p-4 rounded-xl" style={{
+            background: 'rgba(123, 189, 232, 0.1)',
+            border: '1px solid rgba(123, 189, 232, 0.2)'
+          }}>
+            <div 
+              className="p-2 rounded-lg flex-shrink-0"
+              style={{
+                background: 'rgba(123, 189, 232, 0.2)',
+              }}
+            >
+              <Award size={20} style={{ color: '#7BBDE8' }} />
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-1" style={{ color: '#7BBDE8' }}>
+                Current Role
+              </h4>
+              <p className="text-sm" style={{ color: 'rgba(189, 216, 233, 0.8)' }}>
+                Application Developer II at <span className="font-bold" style={{ color: '#7BBDE8' }}>First National Financial LP</span>
+              </p>
+            </div>
+          </div>
+
+          <p className="leading-relaxed text-base mb-4" style={{ color: 'rgba(189, 216, 233, 0.8)' }}>
+            I'm a software developer based in Toronto, passionate about building scalable, elegant systems. 
+            With expertise in <span className="font-semibold" style={{ color: '#7BBDE8' }}>C#</span>, <span className="font-semibold" style={{ color: '#7BBDE8' }}>Python</span>, and cloud technologies like <span className="font-semibold" style={{ color: '#7BBDE8' }}>Azure</span>, I craft clean and efficient solutions.
+          </p>
+          <p className="leading-relaxed text-base" style={{ color: 'rgba(189, 216, 233, 0.7)' }}>
+            When I'm not coding, you'll find me exploring new technologies, contributing to open-source, 
+            or enjoying Toronto's vibrant tech community.
+          </p>
         </motion.div>
 
         {/* Stats Cards */}
@@ -142,76 +191,17 @@ export default function AboutSection() {
               />
               
               <div className="relative z-10">
-                <Icon size={24} style={{ color: '#7BBDE8' }} className="mb-3" />
-                <p className="text-3xl font-bold mb-1" style={{ color: '#BDD8E9' }}>
+                <Icon size={28} style={{ color: '#7BBDE8' }} className="mb-3" />
+                <p className="text-4xl font-bold mb-2" style={{ color: '#BDD8E9' }}>
                   {stat.value}
                 </p>
-                <p className="text-sm" style={{ color: 'rgba(189, 216, 233, 0.6)' }}>
+                <p className="text-base" style={{ color: 'rgba(189, 216, 233, 0.6)' }}>
                   {stat.label}
                 </p>
               </div>
             </motion.div>
           );
         })}
-
-        {/* Bio Card - Spans 2 columns */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="md:col-span-2 p-6 rounded-2xl backdrop-blur-xl"
-          style={{
-            background: 'rgba(0, 29, 57, 0.3)',
-            border: '1px solid rgba(123, 189, 232, 0.2)',
-          }}
-        >
-          <h3 className="text-xl font-bold mb-3" style={{ color: '#7BBDE8' }}>
-            My Story
-          </h3>
-          <p className="leading-relaxed text-sm mb-3" style={{ color: 'rgba(189, 216, 233, 0.8)' }}>
-            I'm a software developer based in Toronto, passionate about building scalable, elegant systems. 
-            With expertise in <span className="font-semibold" style={{ color: '#7BBDE8' }}>C#</span>, <span className="font-semibold" style={{ color: '#7BBDE8' }}>Python</span>, and cloud technologies like <span className="font-semibold" style={{ color: '#7BBDE8' }}>Azure</span>, I craft clean and efficient solutions.
-          </p>
-          <p className="leading-relaxed text-sm" style={{ color: 'rgba(189, 216, 233, 0.7)' }}>
-            When I'm not coding, you'll find me exploring new technologies, contributing to open-source, 
-            or enjoying Toronto's vibrant tech community.
-          </p>
-        </motion.div>
-
-        {/* Current Role Card */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          whileHover={{ y: -5 }}
-          className="md:col-span-2 p-6 rounded-2xl backdrop-blur-xl"
-          style={{
-            background: 'rgba(0, 29, 57, 0.3)',
-            border: '1px solid rgba(123, 189, 232, 0.2)',
-          }}
-        >
-          <div className="flex items-start gap-4">
-            <div 
-              className="p-3 rounded-xl flex-shrink-0"
-              style={{
-                background: 'rgba(123, 189, 232, 0.1)',
-                border: '1px solid rgba(123, 189, 232, 0.2)'
-              }}
-            >
-              <Award size={24} style={{ color: '#7BBDE8' }} />
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2" style={{ color: '#BDD8E9' }}>
-                Current Role
-              </h4>
-              <p className="text-sm" style={{ color: 'rgba(189, 216, 233, 0.7)' }}>
-                Application Developer II at First National Financial LP
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
